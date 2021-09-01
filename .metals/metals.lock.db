@@ -1,0 +1,6 @@
+#FileLock
+#Mon Aug 23 10:55:38 CEST 2021
+server=localhost\:10529
+hostName=localhost
+method=file
+id=17b7238ee6088d03b9c71d91b8f68c86605a417f38a
