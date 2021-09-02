@@ -15,9 +15,9 @@ namespace CommanderGQL.GraphQL.Commands{
             .UseDbContext<AppDbContext>()
             .Description("This is a platform to which command belong");
         }
-        public class Resolvers{
+        private class Resolvers{
             public Platform GetPlatform(Command command, [ScopedService] AppDbContext context){
-                return context.Platform.FirstOrDefault(p=>p.Id==command.PlatformId);
+                return context.Platforms.FirstOrDefault(p=>p.Id==command.PlatformId);
             }
         }
     }

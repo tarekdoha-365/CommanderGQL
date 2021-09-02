@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using CommanderGQL.Data;
@@ -31,9 +32,9 @@ namespace CommanderGQL
             .AddGraphQLServer()
             .AddQueryType<Query>()
             .AddType<PlatformType>()
+            .AddType<CommandType>()
             .AddFiltering()
-            .AddSorting()
-            .AddProjections();
+            .AddSorting();
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
