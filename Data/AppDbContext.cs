@@ -9,7 +9,7 @@ namespace CommanderGQL.Data
         {
             
         }
-        public DbSet<Platform> Platforms { get; set; }
+        public DbSet<Platform> Platform { get; set; }
         public DbSet<Command> Commands { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

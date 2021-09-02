@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CommanderGQL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210823002146_AddCommandToDB")]
-    partial class AddCommandToDB
+    [Migration("20210901235830_AddInitialToDB")]
+    partial class AddInitialToDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -61,7 +61,7 @@ namespace CommanderGQL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Platform");
+                    b.ToTable("Platforms");
                 });
 
             modelBuilder.Entity("CommanderGQL.Models.Command", b =>

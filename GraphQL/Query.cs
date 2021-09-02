@@ -14,7 +14,7 @@ namespace CommanderGQL.GraphQL
         [UseProjection]
         public IQueryable<Platform> GetPlatform([ScopedService] AppDbContext context)
         {
-            return context.Platforms;
+            return context.Platform;
         }
         [UseDbContext(typeof(AppDbContext))]
         [UseFiltering]

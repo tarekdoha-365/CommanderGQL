@@ -2,10 +2,24 @@
 
 namespace CommanderGQL.Migrations
 {
-    public partial class AddCommandToDB : Migration
+    public partial class AddInitialToDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Platforms",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LicenseKey = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Platforms", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Commands",
                 columns: table => new
@@ -20,9 +34,9 @@ namespace CommanderGQL.Migrations
                 {
                     table.PrimaryKey("PK_Commands", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Commands_Platform_PlatformId",
+                        name: "FK_Commands_Platforms_PlatformId",
                         column: x => x.PlatformId,
-                        principalTable: "Platform",
+                        principalTable: "Platforms",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -37,6 +51,9 @@ namespace CommanderGQL.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Commands");
+
+            migrationBuilder.DropTable(
+                name: "Platforms");
         }
     }
 }

@@ -59,7 +59,7 @@ namespace CommanderGQL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Platform");
+                    b.ToTable("Platforms");
                 });
 
             modelBuilder.Entity("CommanderGQL.Models.Command", b =>
