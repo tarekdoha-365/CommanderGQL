@@ -33,6 +33,7 @@ namespace CommanderGQL
             .AddQueryType<Query>()
             .AddType<PlatformType>()
             .AddType<CommandType>()
+            .AddMutationType<Mutation>()
             .AddFiltering()
             .AddSorting();
         }
