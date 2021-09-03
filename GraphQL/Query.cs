@@ -13,7 +13,7 @@ namespace CommanderGQL.GraphQL
         [UseSorting]
         public IQueryable<Platform> GetPlatform([ScopedService] AppDbContext context)
         {
-            return context.Platforms;
+            return context.Platform;
         }
         [UseDbContext(typeof(AppDbContext))]
         [UseFiltering]
